@@ -1,3 +1,8 @@
+'''
+Application of BFS- Shortest Path and Minimum Spanning Tree for unweighted graph
+With Breadth First, we always reach a vertex from given source using the minimum number of edges.
+'''
+
 # Python3 Program to print BFS traversal
 # from a given source vertex. BFS(int s)
 # traverses vertices reachable from s.

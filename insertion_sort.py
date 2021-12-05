@@ -1,3 +1,5 @@
+# check gfg explanation - good
+
 def insertionSort(arr, n):
     for i in range(1, n):
         key = arr[i]
