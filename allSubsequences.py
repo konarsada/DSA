@@ -1,8 +1,9 @@
-def ps(ip, op):
-    if(len(ip) == 0):
-        print(op, end = ", ")
+def powerSet(ipStr, i=0, cur=""):
+    if(i == len(ipStr)):
+        print(cur, end=", ")
         return
-    ps(ip[1:], op + ip[0])
-    ps(ip[1:], op)
+    
+    powerSet(ipStr, i+1, cur + ipStr[i])
+    powerSet(ipStr, i+1, cur)
 
-ps("abca", "")
+powerSet("abc")
