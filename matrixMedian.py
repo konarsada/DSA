@@ -26,7 +26,7 @@ def quicksort(arr, low, high):
         quicksort(arr, low, q-1)
         quicksort(arr, q+1, high)
 
-m = [[1, 3, 1], [2, 6, 9], [3, 6, 9]]
+m = [[1, 3, 5], [2, 6, 9], [3, 6, 9]]
 
 mat_to_arr = arrCopy(m)
 
