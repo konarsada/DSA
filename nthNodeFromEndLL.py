@@ -21,7 +21,7 @@ class LinkedList:
             front = front.next
             temp -= 1
         
-        while(front):
+        while(front.next):
             front = front.next
             back = back.next
         
@@ -34,4 +34,4 @@ ll.push(4)
 ll.push(15)
 ll.push(35)
 
-print(ll.nLast(3))
+print(ll.nLast(1))
