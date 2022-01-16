@@ -70,5 +70,7 @@ root.left.right = Node(5)
 print("Level Order or BFS", end=": ")
 printLevelOrder(root)
 
+print()
+
 print("Postorder", end=": ")
 printPostOrder(root)
