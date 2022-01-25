@@ -33,7 +33,22 @@ def maxValueNode(node):
     
     return node
 
+def parentNode(root, data, parent=None):
+        if(root is None):
+            return
+        
+        if(data < root.data):
+            return parentNode(root.left, data, root)
+        
+        elif(data > root.data):
+            return parentNode(root.right, data, root)
+        
+        else:
+            return parent
+
 def deleteNode(root, data):
+    global r
+    
     if(root is None):
         return
     
@@ -47,22 +62,42 @@ def deleteNode(root, data):
     else:
         # if leaf node
         if(root.left is None and root.right is None):
-            root.data = None
+            parent = parentNode(r, data)
+            
+            if(data < parent.data):
+                parent.left = None
+            else:
+                parent.right = None
         
         # if only one child
         elif(root.left is None):
-            root.data = root.right.data
-            root.right = None
+            parent = parentNode(r, data)
+            
+            if(data < parent.data):
+                parent.left = root.right
+            else:
+                parent.right = root.right
         
         elif(root.right is None):
-            root.data = root.left.data
-            root.left = None
+            parent = parentNode(r, data)
+            
+            if(data < parent.data):
+                parent.left = root.left
+            else:
+                parent.right = root.left
         
         # if both child
         else:
             inPred = maxValueNode(root)
+            
+            parent = parentNode(r, inPred.data)
+            if(inPred.data < parent.data):
+                parent.left = None
+            else:
+                parent.right = None
+            
             root.data = inPred.data
-            deleteNode(root.left, root.data)
+            
             
 
 r = RootNode(50)
@@ -82,5 +117,9 @@ inorder(r)
 print()
 
 deleteNode(r, 55)
+inorder(r)
+print()
+
+deleteNode(r, 30)
 inorder(r)
 print()
