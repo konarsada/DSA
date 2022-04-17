@@ -1,3 +1,36 @@
+'''
+
+class Queue:
+    def __init__(self, n):
+        self.q = [None] * n
+        self.front = self.rear = 0
+        self.n = n
+    def enqueue(self, n):
+        if(self.rear == self.n):
+            print("Overflow")
+        else:
+            self.q[self.rear] = n
+            self.rear += 1
+            print(self.q)
+    def dequeue(self):
+        if(self.front == self.rear):
+            print("Underflow")
+        else:
+            self.q[self.front] = None
+            self.front += 1
+            print(self.q)
+
+q = Queue(4)
+q.enqueue(20)
+q.enqueue(25)
+q.enqueue(10)
+q.dequeue()
+q.dequeue()
+print(q.rear, q.front)
+q.dequeue()
+
+'''
+
 class Queue:
 	def __init__(self, c):
 		self.queue = []
